@@ -58,6 +58,9 @@ public class MyApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+    	
+    	COUCOU
+    	
         SpringApplication app = new SpringApplication(MyApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();

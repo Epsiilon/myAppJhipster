@@ -66,7 +66,9 @@ public class WebConfigurerTest {
         env.setActiveProfiles(JHipsterConstants.SPRING_PROFILE_PRODUCTION);
         webConfigurer.onStartup(servletContext);
 
-        verify(servletContext).addFilter(eq("cachingHttpHeadersFilter"), any(CachingHttpHeadersFilter.class));
+        //verify(servletContext).addFilter(eq("cachingHttpHeadersFilter"), any(CachingHttpHeadersFilter.class));
+        verify(servletContext).addFilter(eq("cachHttpHeadersFilter"), any(CachingHttpHeadersFilter.class));
+        
         verify(servletContext, never()).addServlet(eq("H2Console"), any(WebServlet.class));
     }
 
